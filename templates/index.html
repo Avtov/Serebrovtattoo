@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serebrov Tattoo</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+
+<!-- ======================= HEADER ======================= -->
+<header class="header">
+    <nav class="nav">
+        <a href="#">Главная</a>
+        <a href="#works">Работы</a>
+        <a href="#booking">Запись</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="logo-wrapper">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Логотип Serebrov Tattoo" class="logo">
+        </div>
+        <h1 class="title">SEREBROV TATTOO</h1>
+        <p class="subtitle">ЖИВЕМ РАДИ ЛЮБВИ И ИСКУССТВА</p>
+        <a href="#booking" class="btn">ЗАПИСАТЬСЯ СЕЙЧАС</a>
+    </div>
+</section>
+
+<!-- ======================= ABOUT ======================= -->
+<section class="about" id="about">
+    <h2 class="section-title">О нас</h2>
+    <p class="section-text">
+        Мы команда профессиональных тату-мастеров с многолетним опытом.
+        Каждая работа уникальна и создаётся с любовью к деталям.
+        Мы превращаем ваши идеи в произведения искусства на коже.
+    </p>
+
+    <div class="about-visuals">
+        <svg class="visual-icon" viewBox="0 0 64 64" width="80" height="80">
+            <rect x="10" y="20" width="44" height="12" rx="3" ry="3" fill="#b30000"/>
+            <rect x="30" y="10" width="4" height="12" fill="#fff"/>
+            <path d="M10 26 C2 30, 2 40, 10 44" stroke="#222" stroke-width="2" fill="none"/>
+            <circle cx="32" cy="26" r="2" fill="#222"/>
+        </svg>
+        <svg class="visual-icon" viewBox="0 0 64 64" width="60" height="60">
+            <rect x="20" y="20" width="24" height="24" fill="#111" stroke="#b30000" stroke-width="2" rx="4"/>
+            <circle cx="32" cy="32" r="6" fill="#000"/>
+            <path d="M28 26 L36 26 L36 38 L28 38 Z" fill="none" stroke="#b30000" stroke-width="1"/>
+        </svg>
+        <svg class="visual-icon" viewBox="0 0 64 64" width="60" height="60">
+            <path d="M32 50 L12 30 C12 18, 32 12, 32 24 C32 12, 52 18, 52 30 Z" fill="none" stroke="#ff0055" stroke-width="2"/>
+        </svg>
+        <svg class="visual-icon" viewBox="0 0 64 64" width="60" height="60">
+            <circle cx="32" cy="32" r="12" fill="none" stroke="#ff0055" stroke-width="2"/>
+            <path d="M32 20 C28 28, 36 28, 32 36" fill="none" stroke="#ff0055" stroke-width="2"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ======================= WORKS ======================= -->
+<section class="works" id="works">
+    <h2 class="section-title">Наши работы</h2>
+    <div class="gallery">
+        <img src="{{ url_for('static', filename='img/tattoo1.jpg') }}" alt="Работа 1">
+        <img src="{{ url_for('static', filename='img/tattoo2.jpg') }}" alt="Работа 2">
+        <img src="{{ url_for('static', filename='img/tattoo3.jpg') }}" alt="Работа 3">
+        <img src="{{ url_for('static', filename='img/tattoo4.jpg') }}" alt="Работа 4">
+    </div>
+</section>
+
+<!-- ======================= BOOKING ======================= -->
+<section id="booking">
+    <h2 class="section-title">Запись на тату</h2>
+
+    <form id="booking-form" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон" required>
+        <input type="text" name="contact" placeholder="Telegram или ВК" required>
+        <label for="tattoo_photo">Прикрепите фото татуировки:</label>
+        <input type="file" name="tattoo_photo" id="tattoo_photo" accept="image/*" required>
+        <button type="submit" class="btn">Отправить заявку</button>
+    </form>
+
+    <p id="success-msg">Спасибо! Ваша запись подтверждена.</p>
+</section>
+
+<!-- ======================= CONTACTS ======================= -->
+<section class="contacts" id="contacts">
+    <h2 class="section-title">Контакты</h2>
+    <p class="section-text">
+        Свяжитесь с нами любым удобным способом. Мы всегда рады вашим вопросам и идеям!
+    </p>
+
+    <div class="contact-cards">
+        <div class="contact-card">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="#ff0055">
+                <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.2.48 2.52.74 3.88.74a1 1 0 011 1V20a1 1 0 01-1 1c-9.39 0-17-7.61-17-17a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.26 2.68.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/>
+            </svg>
+            <p>+7 (901) 171-53-39</p>
+        </div>
+
+        <div class="contact-card">
+            <a href="https://t.me/serebrovtattoo" target="_blank">
+                <img src="{{ url_for('static', filename='img/telegram-icon.png') }}" alt="Telegram" class="contact-icon">
+            </a>
+            <p>@Serebrovtattoo</p>
+        </div>
+
+        <div class="contact-card">
+            <a href="https://vk.com/Serebrovtattoo" target="_blank">
+                <img src="{{ url_for('static', filename='img/vk-icon.png') }}" alt="VK" class="contact-icon">
+            </a>
+            <p>@Serebrovtattoo</p>
+        </div>
+
+        <div class="contact-card">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="#ff0055">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+            </svg>
+            <p>г. Москва, ул. Тату-мастерская 10</p>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer">
+    © 2026 Serebrov Tattoo | 18+
+</footer>
+
+<!-- ======================= JS ======================= -->
+<script src="{{ url_for('static', filename='js/booking.js') }}" defer></script>
+<script>
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+</script>
+
+</body>
+</html>
