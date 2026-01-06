@@ -1,1 +1,2 @@
-web: gunicorn st:serebrovtattoo
+web: gunicorn app:app
+
